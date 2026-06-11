@@ -80,7 +80,7 @@ const ProductList = () => {
             {/* modal container */}
             <motion.div
               onClick={(e) => e.stopPropagation()}
-              className="bg-white py-4 w-[70%] h-120 rounded-md relative md:w-[40%] lg:w-155 lg:h-79"
+              className="bg-white py-4 w-[80%] h-130 rounded-md relative md:w-[40%] lg:w-155 lg:h-79"
               initial={{ scale: 0, opacity: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ scale: 0, opacity: 0 }}
