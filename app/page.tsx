@@ -162,7 +162,7 @@ export default function Home() {
         <motion.div
           className="absolute top-50 right-40 hidden lg:block"
           initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 3 }}
         >
           <motion.div
@@ -182,7 +182,7 @@ export default function Home() {
         <motion.div
           className="absolute top-50 left-40 hidden lg:block"
           initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 3 }}
         >
           <motion.div

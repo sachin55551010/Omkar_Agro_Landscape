@@ -75,28 +75,20 @@ const ProductList = () => {
         {selectedProduct && (
           <div
             onClick={() => setSelectedProduct(null)}
-            className="fixed inset-0 flex items-center justify-center backdrop-blur-[.4rem] transition-all duration-600 z-50"
+            className="inset-0 h-dvh w-dvw fixed flex items-center justify-center backdrop-blur-lg"
           >
+            {/* modal container */}
             <motion.div
               onClick={(e) => e.stopPropagation()}
-              className={`bg-white flex flex-col items-center justify-center rounded-lg max-w-90 px-4 py-6 relative`}
-              initial={{
-                scale: 0,
-                opacity: 0,
-                x: clickPosition.x - window.innerWidth / 2,
-                y: clickPosition.y - window.innerHeight / 2,
-              }}
-              animate={{ scale: 1, opacity: 1, x: 0, y: 0 }}
-              exit={{
-                scale: 0,
-                opacity: 0,
-                x: clickPosition.x - window.innerWidth / 2,
-                y: clickPosition.y - window.innerHeight / 2,
-              }}
+              className="bg-white py-4 w-[70%] h-120 rounded-md relative md:w-[40%] lg:w-155 lg:h-79"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ scale: 0, opacity: 0 }}
               transition={{ duration: 0.5 }}
             >
+              {/* image section */}
               <motion.div
-                className="w-90 flex items-center justify-center"
+                className="flex items-center justify-center lg:absolute lg:top-0 lg:left-2"
                 initial={{
                   opacity: 0,
                   scale: 0,
@@ -109,31 +101,41 @@ const ProductList = () => {
                   x: clickPosition.x - window.innerWidth / 2,
                   y: clickPosition.y - window.innerHeight / 2,
                 }}
-                animate={{ scale: 1, opacity: 1, x: 0, y: 0 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  x: 0,
+                  y: 0,
+                  transition: { duration: 0.5, delay: 0.4 },
+                }}
                 transition={{ duration: 0.5 }}
               >
                 <Image
                   src={selectedProduct.image}
                   alt={selectedProduct.name}
-                  width={330}
-                  height={330}
-                  className="rounded-md object-cover"
+                  width={300}
+                  height={150}
+                  className="object-cover rounded-md mt-2"
                 />
               </motion.div>
 
-              {/* detail section */}
-              <motion.div
-                className="flex flex-col"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                // exit={{ scale: 0, opacity: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h5 className="font-medium text-gray-600">
+              {/* product detail section */}
+              <motion.div className="px-6 mt-2 flex flex-col gap-3 absolute lg:w-75 lg:h-75 lg:top-0 lg:right-[10] text-2xl">
+                <motion.h5
+                  className="font-medium text-gray-600"
+                  initial={{ opacity: 0, scale: 1, y: 100 }}
+                  animate={{ y: 0, opacity: 1, scale: 1 }}
+                  transition={{ duration: 1 }}
+                >
                   {selectedProduct.name}
-                </h5>
+                </motion.h5>
 
-                <div className="flex gap-3 mt-2">
+                <motion.div
+                  className="flex gap-3 mt-2"
+                  initial={{ opacity: 0, scale: 1, y: 100 }}
+                  animate={{ y: 0, opacity: 1, scale: 1 }}
+                  transition={{ duration: 1 }}
+                >
                   <span className="text-[0.7rem] bg-(--light-green) py-1 px-3 rounded-xl">
                     {selectedProduct.type}
                   </span>
@@ -141,20 +143,27 @@ const ProductList = () => {
                   <span className="text-[0.7rem] bg-(--primary-text) py-1 px-3 rounded-xl">
                     {selectedProduct.category}
                   </span>
-                </div>
-                <p className="text-[0.7rem] mt-2 max-w-full">
+                </motion.div>
+                <motion.p
+                  className="text-[.8rem]"
+                  initial={{ opacity: 0, scale: 1 }}
+                  animate={{ opacity: 1, scale: 1, transition: { delay: 0.5 } }}
+                  transition={{ duration: 1.2 }}
+                >
                   {selectedProduct.description}
-                </p>
+                </motion.p>
               </motion.div>
+
+              {/* cross button */}
               <motion.div
                 onClick={() => setSelectedProduct(null)}
-                className="absolute top-[-40] right-[-40] bg-(--light-green) p-2 rounded-lg"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1, rotate: 360 }}
-                // exit={{ opacity: 0, scale: 0, rotate: 180 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                className="absolute top-[-10] right-[-10] bg-(--light-green) p-1 rounded-md"
               >
-                <RxCross2 size={20} strokeWidth={1} className="text-gray-600" />
+                <RxCross2
+                  size={22}
+                  className="text-zinc-600"
+                  strokeWidth={0.5}
+                />
               </motion.div>
             </motion.div>
           </div>
@@ -165,3 +174,6 @@ const ProductList = () => {
 };
 
 export default ProductList;
+
+//  x: clickPosition.x - window.innerWidth / 2,
+//  y: clickPosition.y - window.innerHeight / 2,
