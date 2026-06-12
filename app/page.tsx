@@ -25,7 +25,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/30" />
 
         {/* Content */}
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center gap-4">
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center gap-2">
           {/* Heading */}
           <div className="max-w-5xl leading-12">
             {heading.split(" ").map((word, wordIndex) => {
@@ -41,7 +41,7 @@ export default function Home() {
                     return (
                       <motion.span
                         key={charIndex}
-                        className={`inline-block text-4xl font-bold lg:text-6xl ${
+                        className={`inline-block text-3xl font-bold lg:text-6xl ${
                           index > 35 && index < 56
                             ? "text-(--primary-text) italic"
                             : "text-white"

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { ProductListData, product_list_obj } from "../constants/product_list";
-import { RxCross2 } from "react-icons/rx";
+import { HiOutlineXMark } from "react-icons/hi2";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
 const ProductList = () => {
@@ -67,35 +67,33 @@ const ProductList = () => {
 
         <motion.button className="bg-(--secondary-bg) py-3 flex items-center justify-center gap-4 rounded-lg mt-4 hover:bg-(--primary-bg)">
           <span className="font-semibold">See All Product</span>
-          <HiOutlineArrowLongRight size={26} />
         </motion.button>
       </ul>
 
+      {/* product menu modal */}
       <AnimatePresence>
         {selectedProduct && (
-          <div
+          <motion.div
             onClick={() => setSelectedProduct(null)}
-            className="inset-0 h-dvh w-dvw fixed flex items-center justify-center backdrop-blur-lg"
+            className="inset-0 fixed h-dvh w-dvw flex items-center justify-center z-50"
+            initial={{ backdropFilter: "blur(0px)" }}
+            animate={{ backdropFilter: "blur(10px)" }}
+            exit={{ backdropFilter: "blur(0px)" }}
+            transition={{ duration: 0.5 }}
           >
-            {/* modal container */}
+            {/* main container */}
             <motion.div
               onClick={(e) => e.stopPropagation()}
-              className="bg-white py-4 w-[80%] h-130 rounded-md relative md:w-[40%] lg:w-155 lg:h-79"
-              initial={{ scale: 0, opacity: 0 }}
+              className="w-[80%] lg:w-[60%] h-auto bg-white flex flex-col p-4 rounded-md lg:flex-row relative"
+              initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ scale: 0, opacity: 0 }}
+              exit={{ opacity: 0, scale: 0 }}
               transition={{ duration: 0.5 }}
             >
-              {/* image section */}
+              {/* product Image */}
               <motion.div
-                className="flex items-center justify-center lg:absolute lg:top-0 lg:left-2"
+                className="w-full p-3"
                 initial={{
-                  opacity: 0,
-                  scale: 0,
-                  x: clickPosition.x - window.innerWidth / 2,
-                  y: clickPosition.y - window.innerHeight / 2,
-                }}
-                exit={{
                   opacity: 0,
                   scale: 0,
                   x: clickPosition.x - window.innerWidth / 2,
@@ -106,35 +104,49 @@ const ProductList = () => {
                   scale: 1,
                   x: 0,
                   y: 0,
-                  transition: { duration: 0.5, delay: 0.4 },
+                  transition: { duration: 0.8, delay: 0.3 },
                 }}
-                transition={{ duration: 0.5 }}
+                exit={{
+                  opacity: 0,
+                  scale: 0,
+                  x: clickPosition.x - window.innerWidth / 2,
+                  y: clickPosition.y - window.innerHeight / 2,
+                }}
+                transition={{
+                  duration: 0.5,
+                }}
               >
                 <Image
                   src={selectedProduct.image}
                   alt={selectedProduct.name}
-                  width={300}
-                  height={150}
-                  className="object-cover rounded-md mt-2"
+                  className="object-center rounded-md"
                 />
               </motion.div>
 
-              {/* product detail section */}
-              <motion.div className="px-6 mt-2 flex flex-col gap-3 absolute lg:w-75 lg:h-75 lg:top-0 lg:right-[10] text-2xl">
+              {/* product details  */}
+              <div className="w-full flex flex-col p-3 gap-3 overflow-hidden">
                 <motion.h5
-                  className="font-medium text-gray-600"
-                  initial={{ opacity: 0, scale: 1, y: 100 }}
-                  animate={{ y: 0, opacity: 1, scale: 1 }}
-                  transition={{ duration: 1 }}
+                  className="font-medium text-gray-600 text-lg"
+                  initial={{ y: "200px", opacity: 0 }}
+                  animate={{
+                    y: 0,
+                    scale: 1,
+                    opacity: 1,
+                    transition: { duration: 0.5, delay: 0.5 },
+                  }}
                 >
                   {selectedProduct.name}
                 </motion.h5>
 
                 <motion.div
                   className="flex gap-3 mt-2"
-                  initial={{ opacity: 0, scale: 1, y: 100 }}
-                  animate={{ y: 0, opacity: 1, scale: 1 }}
-                  transition={{ duration: 1 }}
+                  initial={{ y: "200px", opacity: 0 }}
+                  animate={{
+                    y: 0,
+                    scale: 1,
+                    opacity: 1,
+                    transition: { duration: 0.5, delay: 0.7 },
+                  }}
                 >
                   <span className="text-[0.7rem] bg-(--light-green) py-1 px-3 rounded-xl">
                     {selectedProduct.type}
@@ -145,28 +157,26 @@ const ProductList = () => {
                   </span>
                 </motion.div>
                 <motion.p
-                  className="text-[.8rem]"
-                  initial={{ opacity: 0, scale: 1 }}
-                  animate={{ opacity: 1, scale: 1, transition: { delay: 0.5 } }}
-                  transition={{ duration: 1.2 }}
+                  className="text-[.7rem]"
+                  initial={{ y: "200px", opacity: 0 }}
+                  animate={{
+                    y: 0,
+                    scale: 1,
+                    opacity: 1,
+                    transition: { duration: 0.5, delay: 0.9 },
+                  }}
                 >
                   {selectedProduct.description}
                 </motion.p>
-              </motion.div>
-
-              {/* cross button */}
-              <motion.div
+              </div>
+              <div
                 onClick={() => setSelectedProduct(null)}
-                className="absolute top-[-10] right-[-10] bg-(--light-green) p-1 rounded-md"
+                className="absolute bg-(--light-green) top-0 right-0 rounded-md p-1 cursor-pointer"
               >
-                <RxCross2
-                  size={22}
-                  className="text-zinc-600"
-                  strokeWidth={0.5}
-                />
-              </motion.div>
+                <HiOutlineXMark size={22} strokeWidth={2} />
+              </div>
             </motion.div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </>
