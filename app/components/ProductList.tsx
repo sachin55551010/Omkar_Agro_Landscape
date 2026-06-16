@@ -26,7 +26,19 @@ const ProductList = () => {
   };
   return (
     <>
+      <div className="inline-flex items-center gap-2 mb-2">
+        <span className="h-0.5 w-8 bg-(--accent-green) rounded-full"></span>
+        <span className="text-sm uppercase tracking-[0.2em] text-(--accent-green)">
+          Green Collection
+        </span>
+      </div>
+
       <h4 className="text-4xl font-bold text-zinc-500">Products</h4>
+
+      <p className="mt-2 max-w-2xl text-zinc-400">
+        Discover a wide variety of ornamental plants, flowering species, and
+        landscaping favorites.
+      </p>
       <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
         {productListArr.map((product, index) => (
           <li
@@ -50,7 +62,9 @@ const ProductList = () => {
 
             {/* Product details */}
             <div className="w-full">
-              <h5 className="font-medium text-gray-600">{product.name}</h5>
+              <h5 className="font-medium text-gray-600 text-lg">
+                {product.name}
+              </h5>
 
               <div className="flex gap-3 mt-2">
                 <span className="text-[0.7rem] bg-(--light-green) py-1 px-3 rounded-xl">
@@ -79,7 +93,7 @@ const ProductList = () => {
             initial={{ backdropFilter: "blur(0px)" }}
             animate={{ backdropFilter: "blur(10px)" }}
             exit={{ backdropFilter: "blur(0px)" }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.2 }}
           >
             {/* main container */}
             <motion.div
@@ -88,7 +102,7 @@ const ProductList = () => {
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.2 }}
             >
               {/* product Image */}
               <motion.div
@@ -104,7 +118,7 @@ const ProductList = () => {
                   scale: 1,
                   x: 0,
                   y: 0,
-                  transition: { duration: 0.8, delay: 0.3 },
+                  transition: { duration: 0.2, delay: 0.2 },
                 }}
                 exit={{
                   opacity: 0,
@@ -113,7 +127,7 @@ const ProductList = () => {
                   y: clickPosition.y - window.innerHeight / 2,
                 }}
                 transition={{
-                  duration: 0.5,
+                  duration: 0.3,
                 }}
               >
                 <Image
@@ -126,13 +140,13 @@ const ProductList = () => {
               {/* product details  */}
               <div className="w-full flex flex-col p-3 gap-3 overflow-hidden">
                 <motion.h5
-                  className="font-medium text-gray-600 text-lg"
+                  className="font-medium text-gray-600 text-xl lg:text-2xl"
                   initial={{ y: "200px", opacity: 0 }}
                   animate={{
                     y: 0,
                     scale: 1,
                     opacity: 1,
-                    transition: { duration: 0.5, delay: 0.5 },
+                    transition: { duration: 0.2, delay: 0.2 },
                   }}
                 >
                   {selectedProduct.name}
@@ -145,7 +159,7 @@ const ProductList = () => {
                     y: 0,
                     scale: 1,
                     opacity: 1,
-                    transition: { duration: 0.5, delay: 0.7 },
+                    transition: { duration: 0.2, delay: 0.2 },
                   }}
                 >
                   <span className="text-[0.7rem] bg-(--light-green) py-1 px-3 rounded-xl">
@@ -157,13 +171,13 @@ const ProductList = () => {
                   </span>
                 </motion.div>
                 <motion.p
-                  className="text-[.7rem]"
+                  className="text-[.7rem] lg:text-[0.9rem]"
                   initial={{ y: "200px", opacity: 0 }}
                   animate={{
                     y: 0,
                     scale: 1,
                     opacity: 1,
-                    transition: { duration: 0.5, delay: 0.9 },
+                    transition: { duration: 0.2, delay: 0.2 },
                   }}
                 >
                   {selectedProduct.description}

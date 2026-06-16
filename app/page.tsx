@@ -56,7 +56,7 @@ export default function Home() {
                         }}
                         transition={{
                           duration: 0.2,
-                          delay: index * 0.03,
+                          delay: index * 0.02,
                         }}
                       >
                         {char}
@@ -72,7 +72,7 @@ export default function Home() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2 }}
+            transition={{ delay: 1.2 }}
             className="mt-6 max-w-2xl text-sm text-gray-200 lg:text-lg"
           >
             Professional landscaping, garden maintenance, and premium-quality
@@ -83,7 +83,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 2.5 }}
+            transition={{ delay: 1.4 }}
             className="mt-6 flex flex-wrap justify-center gap-3"
           >
             <div className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white backdrop-blur-md">
@@ -104,7 +104,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 2.7 }}
+              transition={{ delay: 1.6 }}
             >
               <Link
                 href="/contact"
@@ -117,7 +117,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 2.9 }}
+              transition={{ delay: 1.8 }}
             >
               <Link
                 href="/products"
@@ -132,7 +132,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 3.1 }}
+            transition={{ delay: 2 }}
             className="mt-10 flex gap-8 lg:gap-16 text-white"
           >
             <div>
@@ -163,7 +163,7 @@ export default function Home() {
           className="absolute top-50 right-40 hidden lg:block"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 3 }}
+          transition={{ duration: 1, delay: 2.1 }}
         >
           <motion.div
             animate={{ y: [0, 20, 0] }}
@@ -183,7 +183,7 @@ export default function Home() {
           className="absolute top-50 left-40 hidden lg:block"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 3 }}
+          transition={{ duration: 1, delay: 2.1 }}
         >
           <motion.div
             animate={{ y: [0, 20, 0] }}
