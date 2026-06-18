@@ -5,7 +5,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { ProductListData, product_list_obj } from "../constants/product_list";
 import { HiOutlineXMark } from "react-icons/hi2";
-import { HiOutlineArrowLongRight } from "react-icons/hi2";
+import { plants } from "../constants/product_list";
 
 const ProductList = () => {
   const productListArr: ProductListData[] = Array(20).fill(product_list_obj);
@@ -49,14 +49,15 @@ const ProductList = () => {
             <motion.div
               layoutId={`product-image-${index}`}
               whileHover={{ scale: 1.03 }}
-              className="w-full"
+              className="relative overflow-hidden rounded-lg"
             >
               <Image
-                src={product.image}
+                src={product.imageUrl}
                 alt={product.name}
                 width={350}
                 height={350}
-                className="w-full max-w-85 h-auto rounded-lg object-cover"
+                placeholder="blur"
+                className="object-cover"
               />
             </motion.div>
 
@@ -131,9 +132,10 @@ const ProductList = () => {
                 }}
               >
                 <Image
-                  src={selectedProduct.image}
+                  src={selectedProduct.imageUrl}
                   alt={selectedProduct.name}
                   className="object-center rounded-md"
+                  placeholder="blur"
                 />
               </motion.div>
 
@@ -187,7 +189,12 @@ const ProductList = () => {
                 onClick={() => setSelectedProduct(null)}
                 className="absolute bg-(--light-green) top-0 right-0 rounded-md p-1 cursor-pointer"
               >
-                <HiOutlineXMark size={22} strokeWidth={2} />
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 1.5 }}
+                >
+                  <HiOutlineXMark size={22} strokeWidth={2} />
+                </motion.div>
               </div>
             </motion.div>
           </motion.div>

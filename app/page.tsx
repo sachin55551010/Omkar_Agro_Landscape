@@ -18,6 +18,7 @@ export default function Home() {
           alt="Landscape"
           fill
           priority
+          placeholder="blur"
           className="object-cover brightness-40"
         />
 
