@@ -15,6 +15,7 @@ const ServicePage = () => {
           alt="Service Background"
           fill
           priority
+          placeholder="blur"
           className="object-cover"
         />
         <div className="inset-0 absolute bg-black/40"></div>

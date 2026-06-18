@@ -75,6 +75,7 @@ const ContactPage = () => {
           alt="Service Background"
           fill
           priority
+          placeholder="blur"
           className="object-cover"
         />
 

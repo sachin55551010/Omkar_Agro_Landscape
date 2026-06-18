@@ -28,6 +28,7 @@ export const ServiceList = () => {
                 alt={elem.title}
                 fill
                 priority
+                placeholder="blur"
                 className="object-cover"
               />
 
