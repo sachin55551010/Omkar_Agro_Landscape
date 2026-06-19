@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <main className={`relative`}>
-      <section className="relative h-dvh w-auto">
+      <section className="relative h-dvh w-dvw w-auto">
         {/* Background Image */}
         <Image
           src={plant}

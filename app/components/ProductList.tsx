@@ -3,13 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
-import { ProductListData, product_list_obj } from "../constants/product_list";
+import { ProductListData } from "../constants/product_list";
 import { HiOutlineXMark } from "react-icons/hi2";
 import { plants } from "../constants/product_list";
 
 const ProductList = () => {
-  const productListArr: ProductListData[] = Array(20).fill(product_list_obj);
-
   const [selectedProduct, setSelectedProduct] =
     useState<ProductListData | null>(null);
 
@@ -44,7 +42,7 @@ const ProductList = () => {
           <li
             key={index}
             onClick={(e) => handleProductBtn(e, product)}
-            className="rounded-lg flex gap-2 flex-col items-center cursor-pointer"
+            className="rounded-lg flex gap-2 flex-col items-center cursor-pointer shadow-[0px_0px_3px_rgba(0,0,0,.1)] p-2"
           >
             <motion.div
               layoutId={`product-image-${index}`}
