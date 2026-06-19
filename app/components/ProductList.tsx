@@ -40,7 +40,7 @@ const ProductList = () => {
         landscaping favorites.
       </p>
       <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
-        {productListArr.map((product, index) => (
+        {plants.map((product, index) => (
           <li
             key={index}
             onClick={(e) => handleProductBtn(e, product)}
@@ -49,14 +49,14 @@ const ProductList = () => {
             <motion.div
               layoutId={`product-image-${index}`}
               whileHover={{ scale: 1.03 }}
-              className="relative overflow-hidden rounded-lg"
+              className="relative w-full aspect-square overflow-hidden rounded-lg"
             >
               <Image
                 src={product.imageUrl}
                 alt={product.name}
-                width={350}
-                height={350}
+                fill={true}
                 placeholder="blur"
+                priority
                 className="object-cover"
               />
             </motion.div>
@@ -67,7 +67,7 @@ const ProductList = () => {
                 {product.name}
               </h5>
 
-              <div className="flex gap-3 mt-2">
+              <div className="flex w-fit flex-col lg:flex-row gap-3 mt-2">
                 <span className="text-[0.7rem] bg-(--light-green) py-1 px-3 rounded-xl">
                   {product.type}
                 </span>
@@ -107,7 +107,7 @@ const ProductList = () => {
             >
               {/* product Image */}
               <motion.div
-                className="w-full p-3"
+                className="w-full aspect-square overflow-hidden p-3"
                 initial={{
                   opacity: 0,
                   scale: 0,
@@ -134,7 +134,7 @@ const ProductList = () => {
                 <Image
                   src={selectedProduct.imageUrl}
                   alt={selectedProduct.name}
-                  className="object-center rounded-md"
+                  className="object-cover h-full w-full rounded-lg"
                   placeholder="blur"
                 />
               </motion.div>

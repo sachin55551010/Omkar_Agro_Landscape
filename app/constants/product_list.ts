@@ -1,6 +1,26 @@
 import { StaticImageData } from "next/image";
 import samplePlant from "../../public/sample_plant.webp";
 import { nanoid } from "nanoid";
+import rose from "../../public/outdoor flowers/rose.jpg";
+import marigold from "../../public/outdoor flowers/marigold.jpg";
+import petunia from "../../public/outdoor flowers/petunia.jpg";
+import Chrysanthemum from "../../public/outdoor flowers/chrysanthemum.jpg";
+import pansy from "../../public/outdoor flowers/pansy.jpg";
+import geranium from "../../public/outdoor flowers/geranium.jpg";
+import Bougainvillea from "../../public/outdoor flowers/bougainvillea.jpg";
+import Hydrangea from "../../public/outdoor flowers/hydrangea.jpg";
+import azalea from "../../public/outdoor flowers/azalea.jpg";
+import dahlia from "../../public/outdoor flowers/dahlia.jpg";
+import Areca from "../../public/indoor plants/areca palm indoor.jpg";
+import BostonFern from "../../public/indoor plants/boston fern indoor.jpg";
+import Dracaena from "../../public/indoor plants/dracaena indoor.jpg";
+import MoneyPlant from "../../public/indoor plants/money plant indoor.jpg";
+import Monstera from "../../public/indoor plants/monstera indoor.jpg";
+import PeaceLily from "../../public/indoor plants/peace lily indoor.jpg";
+import RubberPlant from "../../public/indoor plants/rubber plant indoor.jpg";
+import SnakePlant from "../../public/indoor plants/snake indoor.jpg";
+import SpiderPlant from "../../public/indoor plants/spider plant indoor.jpg";
+import ZZPlant from "../../public/indoor plants/zz plant indoor.jpg";
 export interface ProductListData {
   id: string;
   name: string;
@@ -34,428 +54,181 @@ export const plants: ProductListData[] = [
   {
     id: nanoid(),
     name: "Rose",
-    type: "Flowering Plant",
+    type: "Outdoor Flower",
     category: "Ornamental",
     description:
-      "A classic flowering shrub known for its fragrant and colorful blooms.",
-    imageUrl: "https://images.unsplash.com/photo-1518623489648-a173ef7824f3",
-  },
-  {
-    id: nanoid(),
-    name: "Lavender",
-    type: "Flowering Herb",
-    category: "Aromatic",
-    description:
-      "A fragrant perennial herb with purple flowers, ideal for borders and gardens.",
-    imageUrl: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6",
-  },
-  {
-    id: nanoid(),
-    name: "Tulip",
-    type: "Bulb Plant",
-    category: "Seasonal Flower",
-    description:
-      "A vibrant spring-blooming flower available in many stunning colors.",
-    imageUrl: "https://images.unsplash.com/photo-1520763185298-1b434c919102",
-  },
-  {
-    id: nanoid(),
-    name: "Sunflower",
-    type: "Flowering Plant",
-    category: "Ornamental",
-    description:
-      "A tall annual plant famous for its large yellow flower heads.",
-    imageUrl: "https://images.unsplash.com/photo-1470509037663-253afd7f0f51",
-  },
-  {
-    id: nanoid(),
-    name: "Jasmine",
-    type: "Flowering Vine",
-    category: "Aromatic",
-    description: "A climbing plant with sweetly scented white flowers.",
-    imageUrl: "https://images.unsplash.com/photo-1468327768560-75b778cbb551",
+      "One of the most popular flowering plants in Himachal Pradesh, widely used in home gardens, hotels, and resorts for its colorful blooms and pleasant fragrance.",
+    imageUrl: rose,
   },
   {
     id: nanoid(),
     name: "Marigold",
-    type: "Flowering Plant",
+    type: "Outdoor Flower",
     category: "Seasonal Flower",
-    description: "A hardy annual with bright orange and yellow blooms.",
-    imageUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-  },
-  {
-    id: nanoid(),
-    name: "Hibiscus",
-    type: "Flowering Shrub",
-    category: "Ornamental",
-    description: "A tropical shrub producing large and colorful flowers.",
-    imageUrl: "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
-  },
-  {
-    id: nanoid(),
-    name: "Bougainvillea",
-    type: "Flowering Climber",
-    category: "Climber",
-    description: "A drought-tolerant vine with vibrant papery bracts.",
-    imageUrl: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e",
-  },
-  {
-    id: nanoid(),
-    name: "Areca Palm",
-    type: "Palm",
-    category: "Indoor & Outdoor",
-    description: "A graceful palm commonly used in tropical landscaping.",
-    imageUrl: "https://images.unsplash.com/photo-1483794344563-d27a8d18014e",
-  },
-  {
-    id: nanoid(),
-    name: "Bamboo",
-    type: "Grass",
-    category: "Privacy Screen",
-    description: "A fast-growing plant ideal for natural fences and screens.",
-    imageUrl: "https://images.unsplash.com/photo-1511497584788-876760111969",
-  },
-  {
-    id: nanoid(),
-    name: "Snake Plant",
-    type: "Succulent",
-    category: "Indoor",
     description:
-      "A low-maintenance indoor plant with upright sword-like leaves.",
-    imageUrl: "https://images.unsplash.com/photo-1593691509543-c55fb32a8b77",
-  },
-  {
-    id: nanoid(),
-    name: "Money Plant",
-    type: "Vine",
-    category: "Indoor",
-    description: "A popular trailing plant believed to bring prosperity.",
-    imageUrl: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae",
-  },
-  {
-    id: nanoid(),
-    name: "Aloe Vera",
-    type: "Succulent",
-    category: "Medicinal",
-    description: "A succulent plant valued for its soothing medicinal gel.",
-    imageUrl: "https://images.unsplash.com/photo-1509423350716-97f2360af9f4",
-  },
-  {
-    id: nanoid(),
-    name: "Agave",
-    type: "Succulent",
-    category: "Xeriscape",
-    description: "A drought-resistant succulent with striking rosette foliage.",
-    imageUrl: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-  },
-  {
-    id: nanoid(),
-    name: "Cactus",
-    type: "Succulent",
-    category: "Desert Plant",
-    description:
-      "A hardy plant adapted to arid conditions with minimal water needs.",
-    imageUrl: "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc",
-  },
-  {
-    id: nanoid(),
-    name: "Fern",
-    type: "Foliage Plant",
-    category: "Shade Garden",
-    description:
-      "A lush green plant that thrives in cool and shaded locations.",
-    imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
-  },
-  {
-    id: nanoid(),
-    name: "Hosta",
-    type: "Perennial",
-    category: "Shade Garden",
-    description:
-      "A foliage plant with broad decorative leaves for shaded landscapes.",
-    imageUrl: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
-  },
-  {
-    id: nanoid(),
-    name: "Boxwood",
-    type: "Shrub",
-    category: "Hedge",
-    description: "A dense evergreen shrub often shaped into formal hedges.",
-    imageUrl: "https://images.unsplash.com/photo-1438109491414-7198515b166b",
-  },
-  {
-    id: nanoid(),
-    name: "Juniper",
-    type: "Conifer",
-    category: "Ground Cover",
-    description: "An evergreen conifer suitable for slopes and ground cover.",
-    imageUrl: "https://images.unsplash.com/photo-1448375240586-882707db888b",
-  },
-  {
-    id: nanoid(),
-    name: "Cypress",
-    type: "Tree",
-    category: "Evergreen",
-    description:
-      "A tall evergreen tree ideal for screening and accent planting.",
-    imageUrl: "https://images.unsplash.com/photo-1473773508845-188df298d2d1",
-  },
-  {
-    id: nanoid(),
-    name: "Maple",
-    type: "Tree",
-    category: "Shade Tree",
-    description: "A deciduous tree admired for its colorful autumn foliage.",
-    imageUrl: "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
-  },
-  {
-    id: nanoid(),
-    name: "Oak",
-    type: "Tree",
-    category: "Shade Tree",
-    description: "A majestic long-lived tree providing ample shade.",
-    imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
-  },
-  {
-    id: nanoid(),
-    name: "Magnolia",
-    type: "Flowering Tree",
-    category: "Ornamental Tree",
-    description: "A beautiful tree known for its large fragrant blossoms.",
-    imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
-  },
-  {
-    id: nanoid(),
-    name: "Dogwood",
-    type: "Flowering Tree",
-    category: "Ornamental Tree",
-    description: "A compact tree producing attractive spring flowers.",
-    imageUrl: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
-  },
-  {
-    id: nanoid(),
-    name: "Cherry Blossom",
-    type: "Flowering Tree",
-    category: "Ornamental Tree",
-    description: "A stunning tree celebrated for its pink spring blooms.",
-    imageUrl: "https://images.unsplash.com/photo-1522383225653-ed111181a951",
-  },
-  {
-    id: nanoid(),
-    name: "Japanese Maple",
-    type: "Tree",
-    category: "Accent Plant",
-    description: "A small ornamental tree with elegant red or green foliage.",
-    imageUrl: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e",
-  },
-  {
-    id: nanoid(),
-    name: "Lily",
-    type: "Flowering Plant",
-    category: "Perennial Flower",
-    description: "An elegant flowering plant with trumpet-shaped blooms.",
-    imageUrl: "https://images.unsplash.com/photo-1468327768560-75b778cbb551",
-  },
-  {
-    id: nanoid(),
-    name: "Daisy",
-    type: "Flowering Plant",
-    category: "Perennial Flower",
-    description:
-      "A cheerful garden flower with white petals and yellow centers.",
-    imageUrl: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
+      "A vibrant flowering plant commonly used in landscaping, pathways, and decorative garden beds due to its bright yellow and orange flowers.",
+    imageUrl: marigold,
   },
   {
     id: nanoid(),
     name: "Petunia",
-    type: "Flowering Plant",
+    type: "Outdoor Flower",
     category: "Seasonal Flower",
-    description: "A colorful annual perfect for hanging baskets and borders.",
-    imageUrl: "https://images.unsplash.com/photo-1520763185298-1b434c919102",
+    description:
+      "Known for its abundant blooms and variety of colors, Petunia is a favorite choice for hotel gardens, balconies, and hanging baskets.",
+    imageUrl: petunia,
   },
   {
     id: nanoid(),
-    name: "Begonia",
-    type: "Flowering Plant",
-    category: "Shade Flower",
+    name: "Dahlia",
+    type: "Outdoor Flower",
+    category: "Ornamental",
     description:
-      "A versatile flowering plant thriving in partially shaded gardens.",
-    imageUrl: "https://images.unsplash.com/photo-1518623489648-a173ef7824f3",
+      "A stunning flowering plant with large colorful blooms that adds elegance and visual appeal to landscapes and resort gardens.",
+    imageUrl: dahlia,
+  },
+  {
+    id: nanoid(),
+    name: "Chrysanthemum",
+    type: "Outdoor Flower",
+    category: "Ornamental",
+    description:
+      "Popular for autumn and winter flowering displays, Chrysanthemums are widely planted in gardens and hospitality properties.",
+    imageUrl: Chrysanthemum,
+  },
+  {
+    id: nanoid(),
+    name: "Pansy",
+    type: "Outdoor Flower",
+    category: "Seasonal Flower",
+    description:
+      "A cool-weather flowering plant admired for its colorful petals and unique patterns, commonly seen in Himachal hill gardens.",
+    imageUrl: pansy,
+  },
+  {
+    id: nanoid(),
+    name: "Geranium",
+    type: "Outdoor Flower",
+    category: "Ornamental",
+    description:
+      "A hardy flowering plant frequently used in pots, balconies, and resort landscapes because of its long blooming season.",
+    imageUrl: geranium,
+  },
+  {
+    id: nanoid(),
+    name: "Bougainvillea",
+    type: "Outdoor Flower",
+    category: "Flowering Shrub",
+    description:
+      "A colorful flowering shrub often used along fences, walls, and entrances to create vibrant outdoor displays.",
+    imageUrl: Bougainvillea,
   },
   {
     id: nanoid(),
     name: "Hydrangea",
-    type: "Flowering Shrub",
-    category: "Ornamental",
-    description: "A deciduous shrub with large globe-shaped flower clusters.",
-    imageUrl: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6",
+    type: "Outdoor Flower",
+    category: "Flowering Shrub",
+    description:
+      "A beautiful flowering shrub with large flower clusters, commonly found in premium resorts and mountain gardens.",
+    imageUrl: Hydrangea,
   },
   {
     id: nanoid(),
     name: "Azalea",
-    type: "Flowering Shrub",
-    category: "Ornamental",
-    description: "A spring-blooming shrub with vibrant colorful flowers.",
-    imageUrl: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e",
-  },
-  {
-    id: nanoid(),
-    name: "Camellia",
-    type: "Flowering Shrub",
-    category: "Evergreen",
-    description: "An evergreen shrub producing elegant rose-like blooms.",
-    imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
-  },
-  {
-    id: nanoid(),
-    name: "Gardenia",
-    type: "Flowering Shrub",
-    category: "Aromatic",
+    type: "Outdoor Flower",
+    category: "Seasonal Flower",
     description:
-      "A fragrant shrub with creamy white flowers and glossy leaves.",
-    imageUrl: "https://images.unsplash.com/photo-1468327768560-75b778cbb551",
+      "An easy-to-grow flowering plant with bright blooms that attracts butterflies and enhances garden aesthetics.",
+    imageUrl: azalea,
   },
   {
     id: nanoid(),
-    name: "Croton",
-    type: "Foliage Plant",
-    category: "Tropical",
+    name: "Areca Palm",
+    type: "Indoor Plant",
+    category: "Palm",
     description:
-      "A colorful foliage plant featuring vibrant multicolored leaves.",
-    imageUrl: "https://images.unsplash.com/photo-1593691509543-c55fb32a8b77",
+      "A popular indoor palm with feathery green fronds that brings a tropical feel to homes, hotels, offices, and resort lobbies.",
+    imageUrl: Areca,
+  },
+  {
+    id: nanoid(),
+    name: "Boston Fern",
+    type: "Indoor Plant",
+    category: "Fern",
+    description:
+      "A lush fern known for its arching green fronds. It is commonly used in hanging baskets and indoor decorative spaces.",
+    imageUrl: BostonFern,
   },
   {
     id: nanoid(),
     name: "Dracaena",
-    type: "Foliage Plant",
-    category: "Indoor",
-    description: "A hardy ornamental plant with attractive sword-like leaves.",
-    imageUrl: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae",
-  },
-  {
-    id: nanoid(),
-    name: "Bird of Paradise",
-    type: "Flowering Plant",
-    category: "Tropical",
-    description: "An exotic plant with striking bird-shaped flowers.",
-    imageUrl: "https://images.unsplash.com/photo-1483794344563-d27a8d18014e",
-  },
-  {
-    id: nanoid(),
-    name: "Ixora",
-    type: "Flowering Shrub",
-    category: "Tropical",
-    description: "A compact shrub with dense clusters of bright flowers.",
-    imageUrl: "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
-  },
-  {
-    id: nanoid(),
-    name: "Plumeria",
-    type: "Flowering Tree",
-    category: "Tropical",
-    description: "A tropical tree with fragrant and colorful blossoms.",
-    imageUrl: "https://images.unsplash.com/photo-1470509037663-253afd7f0f51",
-  },
-  {
-    id: nanoid(),
-    name: "Neem",
-    type: "Tree",
-    category: "Medicinal",
+    type: "Indoor Plant",
+    category: "Ornamental",
     description:
-      "A hardy tree valued for its medicinal and environmental benefits.",
-    imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      "An elegant foliage plant with long, sword-shaped leaves that adds a modern and sophisticated touch to interiors.",
+    imageUrl: Dracaena,
   },
   {
     id: nanoid(),
-    name: "Peepal",
-    type: "Tree",
-    category: "Sacred Tree",
+    name: "Money Plant",
+    type: "Indoor Plant",
+    category: "Climber",
     description:
-      "A large deciduous tree revered in many cultures and traditions.",
-    imageUrl: "https://images.unsplash.com/photo-1473773508845-188df298d2d1",
+      "A fast-growing vine with heart-shaped leaves, widely grown indoors for decoration and believed to symbolize prosperity.",
+    imageUrl: MoneyPlant,
   },
   {
     id: nanoid(),
-    name: "Ashoka",
-    type: "Tree",
-    category: "Avenue Tree",
+    name: "Monstera",
+    type: "Indoor Plant",
+    category: "Tropical Foliage",
     description:
-      "A tall slender tree commonly planted along roads and gardens.",
-    imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
-  },
-  {
-    id: nanoid(),
-    name: "Ficus Benjamina",
-    type: "Tree",
-    category: "Indoor & Outdoor",
-    description: "A popular ornamental tree with graceful drooping branches.",
-    imageUrl: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae",
-  },
-  {
-    id: nanoid(),
-    name: "Monstera Deliciosa",
-    type: "Foliage Plant",
-    category: "Indoor",
-    description: "A trendy indoor plant with large split leaves.",
-    imageUrl: "https://images.unsplash.com/photo-1593691509543-c55fb32a8b77",
+      "A trendy ornamental plant featuring large split leaves that create a bold and contemporary indoor aesthetic.",
+    imageUrl: Monstera,
   },
   {
     id: nanoid(),
     name: "Peace Lily",
-    type: "Flowering Plant",
-    category: "Indoor",
+    type: "Indoor Plant",
+    category: "Flowering Plant",
     description:
-      "An elegant indoor plant with white blooms and air-purifying qualities.",
-    imageUrl: "https://images.unsplash.com/photo-1509423350716-97f2360af9f4",
+      "A beautiful indoor plant with glossy leaves and elegant white blooms, commonly used in homes, hotels, and offices.",
+    imageUrl: PeaceLily,
+  },
+  {
+    id: nanoid(),
+    name: "Rubber Plant",
+    type: "Indoor Plant",
+    category: "Ornamental",
+    description:
+      "A hardy indoor plant with large, shiny dark-green leaves that enhances modern living and workspace interiors.",
+    imageUrl: RubberPlant,
+  },
+  {
+    id: nanoid(),
+    name: "Snake Plant",
+    type: "Indoor Plant",
+    category: "Succulent",
+    description:
+      "A low-maintenance plant with upright sword-like leaves, ideal for bedrooms, offices, and indoor decorative arrangements.",
+    imageUrl: SnakePlant,
   },
   {
     id: nanoid(),
     name: "Spider Plant",
-    type: "Foliage Plant",
-    category: "Indoor",
+    type: "Indoor Plant",
+    category: "Hanging Plant",
     description:
-      "An easy-care plant with arching green and white striped leaves.",
-    imageUrl: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae",
+      "A graceful plant with arching green-and-white striped leaves, perfect for hanging baskets and shelves.",
+    imageUrl: SpiderPlant,
   },
   {
     id: nanoid(),
-    name: "Pampas Grass",
-    type: "Grass",
-    category: "Ornamental Grass",
-    description: "A tall ornamental grass with feathery plumes.",
-    imageUrl: "https://images.unsplash.com/photo-1511497584788-876760111969",
-  },
-  {
-    id: nanoid(),
-    name: "Blue Fescue",
-    type: "Grass",
-    category: "Ground Cover",
-    description: "A compact ornamental grass with blue-gray foliage.",
-    imageUrl: "https://images.unsplash.com/photo-1511497584788-876760111969",
-  },
-  {
-    id: nanoid(),
-    name: "Lantana",
-    type: "Flowering Shrub",
-    category: "Butterfly Garden",
-    description: "A colorful shrub that attracts butterflies and pollinators.",
-    imageUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-  },
-  {
-    id: nanoid(),
-    name: "Zinnia",
-    type: "Flowering Plant",
-    category: "Seasonal Flower",
-    description: "A bright and long-blooming flower ideal for garden beds.",
-    imageUrl: "https://images.unsplash.com/photo-1520763185298-1b434c919102",
-  },
-  {
-    id: nanoid(),
-    name: "Cosmos",
-    type: "Flowering Plant",
-    category: "Wildflower",
+    name: "ZZ Plant",
+    type: "Indoor Plant",
+    category: "Ornamental",
     description:
-      "A delicate flowering plant with airy foliage and colorful blooms.",
-    imageUrl: "https://images.unsplash.com/photo-1518623489648-a173ef7824f3",
+      "A resilient indoor plant with glossy green foliage that thrives in low-light conditions and requires minimal care.",
+    imageUrl: ZZPlant,
   },
 ];

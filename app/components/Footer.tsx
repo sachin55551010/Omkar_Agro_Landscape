@@ -1,7 +1,9 @@
 "use client";
+import Link from "next/link";
 import { FaFacebook } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
+import { motion } from "motion/react";
 
 const Footer = () => {
   return (
@@ -10,7 +12,7 @@ const Footer = () => {
         {/* Brand */}
         <div className="border-b border-[#a2cb8b]/40 pb-10">
           <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-[#2f4f2f]">
-            Jai Jawala
+            Omkar Agro
           </h2>
           <p className="mt-4 max-w-lg text-[#1f6f5f]/70 text-base leading-relaxed">
             Landscaping, gardening and outdoor spaces designed to feel natural,
@@ -25,15 +27,30 @@ const Footer = () => {
             <p className="uppercase tracking-[0.18em] text-[0.68rem] text-[#5d8a52] font-medium mb-4">
               Navigation
             </p>
-            <ul className="space-y-3">
-              {["Home", "Services", "Projects", "Contact"].map((item) => (
-                <li
-                  key={item}
-                  className="text-[#2f4f2f]/85 hover:opacity-100 transition-opacity cursor-pointer text-[0.95rem]"
-                >
-                  {item}
-                </li>
-              ))}
+            <ul className="flex flex-col gap-3">
+              {[
+                { title: "Home", url: "/" },
+                { title: "Services", url: "/service" },
+                { title: "Projects", url: "/projects" },
+                { title: "Contact", url: "/contact" },
+              ].map((item) => {
+                return (
+                  <motion.div
+                    className="w-fit"
+                    key={item.title}
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Link
+                      href={item.url}
+                      key={item.title}
+                      className="text-[#2f4f2f]/85 hover:opacity-100 transition-opacity cursor-pointer text-[0.95rem]"
+                    >
+                      {item.title}
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </ul>
           </div>
 

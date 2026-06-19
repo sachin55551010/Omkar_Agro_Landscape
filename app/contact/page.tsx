@@ -159,7 +159,7 @@ const ContactPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1 }}
           >
-            Jai Jawala Nursery and Landscaping
+            Omkar Agro Landscape
           </motion.h1>
 
           {/* contat info section */}
