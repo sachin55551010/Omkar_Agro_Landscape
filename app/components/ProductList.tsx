@@ -132,6 +132,7 @@ const ProductList = () => {
                 <Image
                   src={selectedProduct.imageUrl}
                   alt={selectedProduct.name}
+                  priority
                   className="object-cover h-full w-full rounded-lg"
                   placeholder="blur"
                 />
