@@ -37,7 +37,7 @@ const ProductList = () => {
         Discover a wide variety of ornamental plants, flowering species, and
         landscaping favorites.
       </p>
-      <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
+      <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-4 gap-3 mt-10">
         {plants.map((product, index) => (
           <li
             key={index}
