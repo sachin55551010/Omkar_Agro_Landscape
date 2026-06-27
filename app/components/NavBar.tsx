@@ -11,7 +11,7 @@ const NavBar = () => {
   const { isMenuOpen, closeMenu, openMenu } = useStateStore();
 
   return (
-    <nav className="absolute w-dvw z-50 flex items-center justify-between px-4 py-3 backdrop-blur-sm border">
+    <nav className="absolute w-dvw z-50 flex items-center justify-between px-4 py-3 backdrop-blur-sm">
       {/* Logo */}
       <div className="text-gray-300 font-bold">Logo</div>
 

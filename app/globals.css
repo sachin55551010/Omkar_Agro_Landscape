@@ -12,3 +12,14 @@
   --cream: #f8fbf5;
   --glass-bg: rgba(236, 250, 229, 0.12);
 }
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+}

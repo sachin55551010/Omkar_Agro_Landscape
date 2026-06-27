@@ -22,7 +22,7 @@ const SideMenu = ({ closeMenu }: CloseMenuProp) => {
   }, [isMenuOpen]);
   return (
     <motion.aside
-      className="fixed top-0 right-0 h-dvh w-dvw bg-(--primary-bg) shadow-lg md:hidden flex"
+      className="fixed top-0 right-0 h-dvh w-dvw bg-(--primary-bg) shadow-lg md:hidden flex z-100"
       initial={{ x: "100%" }}
       animate={{ x: 0 }}
       exit={{ x: "100%" }}

@@ -1,13 +1,15 @@
 "use client";
-
 import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { ProductListData } from "../constants/product_list";
 import { HiOutlineXMark } from "react-icons/hi2";
-import { plants } from "../constants/product_list";
-
-const ProductList = () => {
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+interface ProductListProp {
+  plants: ProductListData[];
+}
+const ProductList = ({ plants }: ProductListProp) => {
   const [selectedProduct, setSelectedProduct] =
     useState<ProductListData | null>(null);
 
@@ -24,19 +26,6 @@ const ProductList = () => {
   };
   return (
     <>
-      <div className="inline-flex items-center gap-2 mb-2">
-        <span className="h-0.5 w-8 bg-(--accent-green) rounded-full"></span>
-        <span className="text-sm uppercase tracking-[0.2em] text-(--accent-green)">
-          Green Collection
-        </span>
-      </div>
-
-      <h4 className="text-4xl font-bold text-zinc-500">Products</h4>
-
-      <p className="mt-2 max-w-2xl text-zinc-400">
-        Discover a wide variety of ornamental plants, flowering species, and
-        landscaping favorites.
-      </p>
       <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-4 gap-3 mt-10">
         {plants.map((product, index) => (
           <li
@@ -78,9 +67,13 @@ const ProductList = () => {
           </li>
         ))}
 
-        <motion.button className="bg-(--secondary-bg) py-3 flex items-center justify-center gap-4 rounded-lg mt-4 hover:bg-(--primary-bg)">
-          <span className="font-semibold">See All Product</span>
-        </motion.button>
+        {usePathname() === "/" && (
+          <Link href="/products">
+            <motion.button className="bg-(--secondary-bg) py-3 flex items-center justify-center gap-4 rounded-lg mt-4 hover:bg-(--primary-bg) px-3">
+              <span className="font-semibold">See All Product</span>
+            </motion.button>
+          </Link>
+        )}
       </ul>
 
       {/* product menu modal */}

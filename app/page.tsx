@@ -5,13 +5,14 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import Link from "next/link";
 import ProductList from "./components/ProductList";
+import { plants } from "../app/constants/product_list";
 
 export default function Home() {
   const heading = "Transforming Outdoor Spaces Into Living Masterpieces";
 
   return (
     <main className={`relative`}>
-      <section className="relative h-dvh w-dvw w-auto">
+      <section className="relative h-dvh w-dvw">
         {/* Background Image */}
         <Image
           src={plant}
@@ -202,7 +203,20 @@ export default function Home() {
 
       {/* product list */}
       <section className="p-4">
-        <ProductList />
+        <div className="inline-flex items-center gap-2 mb-2">
+          <span className="h-0.5 w-8 bg-(--accent-green) rounded-full"></span>
+          <span className="text-sm uppercase tracking-[0.2em] text-(--accent-green)">
+            Green Collection
+          </span>
+        </div>
+
+        <h4 className="text-4xl font-bold text-zinc-500">Products</h4>
+
+        <p className="mt-2 max-w-2xl text-zinc-400">
+          Discover a wide variety of ornamental plants, flowering species, and
+          landscaping favorites.
+        </p>
+        <ProductList plants={plants} />
       </section>
     </main>
   );
