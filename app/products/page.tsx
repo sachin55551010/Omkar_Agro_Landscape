@@ -57,7 +57,7 @@ const ProductsPage = () => {
       </div>
 
       {/* search bar */}
-      <div className="bg-(--base-bg) p-4 sticky top-0 z-20">
+      <div className="bg-(--light-green) p-4 sticky top-0 z-20">
         <motion.input
           onFocus={() => setIsFocus(true)}
           onBlur={() => setIsFocus(false)}
@@ -70,7 +70,7 @@ const ProductsPage = () => {
           value={searchProduct}
           onChange={(e) => setSearchProduct(e.target.value)}
           type="text"
-          className="h-10 rounded-lg outline-0 w-[70%] lg:w-[40%] pl-4 text-(--base-bg) placeholder:text-zinc-500"
+          className="h-10 rounded-lg outline-0 w-[70%] lg:w-[40%] pl-4 text-(--base-bg) placeholder:text-zinc-400"
           placeholder="Search"
         />
       </div>

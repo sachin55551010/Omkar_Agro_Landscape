@@ -181,7 +181,7 @@ const ContactPage = () => {
               </div>
               <div className="flex items-center gap-2">
                 <MdLocationPin />
-                <p>Shimla hp</p>
+                <p>Vill Khairi, P.O. Jubbarhatti, Near Shimla Airport(HP)</p>
               </div>
 
               <div className="flex gap-4">
@@ -221,7 +221,7 @@ const ContactPage = () => {
                     repeatDelay: 1,
                   }}
                 >
-                  <MdEmail size={25} className="text-(--base-color)" />
+                  <MdEmail size={25} className="text-(--secondary-bg)" />
                 </motion.span>
               </div>
             </div>

@@ -12,7 +12,7 @@ export default function Home() {
   const heading = "Transforming Outdoor Spaces Into Living Masterpieces";
 
   return (
-    <main className={`relative`}>
+    <main className={`relative w-dvw`}>
       <section className="relative h-dvh w-dvw">
         {/* Background Image */}
         <Image
