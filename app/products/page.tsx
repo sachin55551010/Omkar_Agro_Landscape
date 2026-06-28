@@ -20,6 +20,11 @@ const ProductsPage = () => {
       {/* Header */}
       <div className="h-90">
         <div className="relative h-full">
+          <h1
+            className={`${merienda.className} text-4xl absolute top-20 w-full text-center text-(--light-green) z-10`}
+          >
+            Our Categories
+          </h1>
           <Image
             src={categories}
             alt="categories"
@@ -34,11 +39,6 @@ const ProductsPage = () => {
             className="relative flex items-center
          h-full overflow-x-scroll no-scrollbar px-4 lg:justify-center"
           >
-            <h1
-              className={`${merienda.className} text-4xl absolute top-20 w-full text-center text-(--light-green)`}
-            >
-              Our Categories
-            </h1>
             <ul className="flex gap-4 lg:gap-8">
               {HeadingList.map((product) => {
                 return (
