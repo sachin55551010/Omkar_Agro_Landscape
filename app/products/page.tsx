@@ -6,6 +6,7 @@ import { plants } from "../constants/product_list";
 import { FaFilter } from "react-icons/fa6";
 import { HeadingList } from "../constants/heading_product_list";
 import { akaya, merienda } from "../constants/custom_fonts";
+import categories from "../../public/categories.png";
 import Image from "next/image";
 
 const ProductsPage = () => {
@@ -16,75 +17,64 @@ const ProductsPage = () => {
   );
 
   return (
-    <main className="relative">
-      {/* Hero Section */}
-      <div className="h-85 w-full bg-(--dark-green) flex flex-col items-center justify-center">
-        {/* Heading and Categories */}
-        <div>
-          <h1
-            className={`${akaya.className} text-center text-4xl lg:text-6xl text-white`}
-          >
-            Our Categories
-          </h1>
-
-          <ul className="flex gap-6 overflow-x-scroll px-6 lg:justify-center lg:overflow-hidden no-scrollbar mt-4">
-            {HeadingList.map((product) => (
-              <li
-                key={product.title}
-                className="h-fit flex flex-col items-center gap-1"
-              >
-                <div className="h-19 w-19 lg:h-24 lg:w-24 p-5 rounded-full bg-(--base-bg)">
-                  <motion.div
-                    whileHover={{ scale: 1.3 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Image src={product.img} alt={product.title} />
-                  </motion.div>
-                </div>
-
-                <p className="font-semibold text-sm lg:text-lg max-w-20 wrap-break-word text-center text-(--base-bg)">
-                  {product.title}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* Sticky Search Section */}
-      <div className="sticky top-0 z-50 w-full bg-(--dark-green) shadow-md">
-        <h1
-          className={`text-(--base-bg) px-4 text-lg lg:text-2xl ${merienda.className}`}
-        >
-          Explore Our Wide Variety of Plants and Flowers
-        </h1>
-
-        <div className="mt-2 flex justify-between items-center gap-4 px-3 pb-4 lg:justify-normal">
-          <motion.input
-            onFocus={() => setIsFocus(true)}
-            onBlur={() => setIsFocus(false)}
-            initial={{ backgroundColor: "#ecfae5" }}
-            animate={
-              isFocus
-                ? { backgroundColor: "#84b179" }
-                : { backgroundColor: "#ecfae5" }
-            }
-            transition={{ duration: 0.3, ease: "linear" }}
-            value={searchProduct}
-            onChange={(e) => setSearchProduct(e.target.value)}
-            type="text"
-            placeholder="Search product"
-            className="h-10 w-[95%] rounded-2xl pl-3 outline-none lg:w-[40%]"
+    <main>
+      {/* Header */}
+      <div className="h-90">
+        <div className="relative h-full">
+          <Image
+            src={categories}
+            alt="categories"
+            fill
+            className="object-cover brightness-50"
           />
 
-          <button className="rounded-md p-2 hover:bg-white/10">
-            <FaFilter className="text-(--base-bg)" />
-          </button>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/50" />
+
+          <div className="relative flex items-center h-full overflow-x-scroll no-scrollbar px-4 lg:justify-center">
+            <ul className="flex gap-4 lg:gap-8">
+              {HeadingList.map((product) => {
+                return (
+                  <li
+                    key={product.title}
+                    className="h-18 w-18 flex flex-col items-center"
+                  >
+                    {/* categories image */}
+                    <div className="h-20 w-20 z-10 border bg-(--base-bg) rounded-full p-4 lg:h-24 lg:w-24">
+                      <motion.div whileHover={{ scale: 1.1 }}>
+                        <Image src={product.img} alt={product.title} />
+                      </motion.div>
+                    </div>
+                    <p className="text-(--base-bg) font-semibold">
+                      {product.title}
+                    </p>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
 
-      {/* Product List */}
-      <div className="pt-6">
+      {/* search bar */}
+      <div className="bg-(--base-bg) p-4 sticky top-0 z-20">
+        <motion.input
+          onFocus={() => setIsFocus(true)}
+          onBlur={() => setIsFocus(false)}
+          animate={
+            isFocus
+              ? { backgroundColor: "#5d8a52" }
+              : { backgroundColor: "#a2cb8b" }
+          }
+          transition={{ duration: 0.4 }}
+          value={searchProduct}
+          onChange={(e) => setSearchProduct(e.target.value)}
+          type="text"
+          className="h-10 rounded-lg outline-0 w-[70%] lg:w-[40%] pl-4 text-(--base-bg) placeholder:text-zinc-500"
+          placeholder="Search"
+        />
+      </div>
+      <div className="pt-16">
         <ProductList plants={filteredPlant} />
       </div>
     </main>
