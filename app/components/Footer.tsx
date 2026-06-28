@@ -1,10 +1,12 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 import { motion } from "motion/react";
 import { merienda } from "../constants/custom_fonts";
+import logo from "../../public/agro_logo.png";
 
 const Footer = () => {
   return (
@@ -12,11 +14,17 @@ const Footer = () => {
       <div className="">
         {/* Brand */}
         <div className="border-b border-[#a2cb8b]/40 pb-10">
-          <h2
-            className={`text-5xl md:text-7xl tracking-tight text-(--base-bg) ${merienda.className}`}
-          >
-            Omkar Agro
-          </h2>
+          <div className="flex items-center gap-2">
+            <div>
+              <Image src={logo} alt="logo" height={70} width={70} />
+            </div>
+            <h2
+              className={`text-5xl md:text-7xl tracking-tight text-(--base-bg) ${merienda.className}`}
+            >
+              Omkar Agro
+            </h2>
+          </div>
+
           <p className="mt-4 max-w-lg text-(--base-bg) text-base leading-relaxed">
             Landscaping, gardening and outdoor spaces designed to feel natural,
             timeless and beautiful.

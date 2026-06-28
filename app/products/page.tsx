@@ -3,9 +3,8 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import ProductList from "../components/ProductList";
 import { plants } from "../constants/product_list";
-import { FaFilter } from "react-icons/fa6";
 import { HeadingList } from "../constants/heading_product_list";
-import { akaya, merienda } from "../constants/custom_fonts";
+import { merienda } from "../constants/custom_fonts";
 import categories from "../../public/categories.png";
 import Image from "next/image";
 
@@ -31,7 +30,15 @@ const ProductsPage = () => {
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/50" />
 
-          <div className="relative flex items-center h-full overflow-x-scroll no-scrollbar px-4 lg:justify-center">
+          <div
+            className="relative flex items-center
+         h-full overflow-x-scroll no-scrollbar px-4 lg:justify-center"
+          >
+            <h1
+              className={`${merienda.className} text-4xl absolute top-20 w-full text-center text-(--light-green)`}
+            >
+              Our Categories
+            </h1>
             <ul className="flex gap-4 lg:gap-8">
               {HeadingList.map((product) => {
                 return (
@@ -57,7 +64,7 @@ const ProductsPage = () => {
       </div>
 
       {/* search bar */}
-      <div className="bg-(--light-green) p-4 sticky top-0 z-20">
+      <div className="bg-(--base-bg) p-4 sticky top-0 z-20 shadow-[0px_0px_5px_rgba(0,0,0,.3)]">
         <motion.input
           onFocus={() => setIsFocus(true)}
           onBlur={() => setIsFocus(false)}
@@ -70,11 +77,11 @@ const ProductsPage = () => {
           value={searchProduct}
           onChange={(e) => setSearchProduct(e.target.value)}
           type="text"
-          className="h-10 rounded-lg outline-0 w-[70%] lg:w-[40%] pl-4 text-(--base-bg) placeholder:text-zinc-400"
+          className="h-10 rounded-lg outline-0 w-[70%] lg:w-[40%] pl-4 text-(--base-bg) placeholder:text-zinc-200"
           placeholder="Search"
         />
       </div>
-      <div className="pt-16">
+      <div className="pt-16 mb-10">
         <ProductList plants={filteredPlant} />
       </div>
     </main>
