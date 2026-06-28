@@ -7,5 +7,5 @@ export const akaya = Akaya_Kanadaka({
 
 export const merienda = Merienda({
   subsets: ["latin"],
-  weight: "900",
+  weight: ["400", "900"],
 });
