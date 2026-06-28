@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import ProductList from "./components/ProductList";
 import { plants } from "../app/constants/product_list";
+import { merienda } from "./constants/custom_fonts";
 
 export default function Home() {
   const heading = "Transforming Outdoor Spaces Into Living Masterpieces";
@@ -45,7 +46,7 @@ export default function Home() {
                         key={charIndex}
                         className={`inline-block text-3xl font-bold lg:text-6xl ${
                           index > 35 && index < 56
-                            ? "text-(--primary-text) italic"
+                            ? `text-(--primary-text) ${merienda.className}`
                             : "text-white"
                         }`}
                         initial={{

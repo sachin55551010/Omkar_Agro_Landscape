@@ -5,17 +5,14 @@ import ProductList from "../components/ProductList";
 import { plants } from "../constants/product_list";
 import { FaFilter } from "react-icons/fa6";
 import { HeadingList } from "../constants/heading_product_list";
+import { akaya } from "../constants/custom_fonts";
 import Image from "next/image";
-import { Akaya_Kanadaka } from "next/font/google";
-const akaya = Akaya_Kanadaka({
-  subsets: ["latin"],
-  weight: "400",
-});
+
 const ProductsPage = () => {
   const [searchProduct, setSearchProduct] = useState<string>("");
   const [isFocus, setIsFocus] = useState<boolean>(false);
   const filteredPlant = plants.filter((product) =>
-    product.name.toLowerCase().includes(searchProduct),
+    product.name.toLowerCase().includes(searchProduct.toLowerCase()),
   );
 
   return (
